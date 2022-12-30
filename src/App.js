@@ -42,14 +42,14 @@ export default class App extends Component {
         };
         
         this.recognizer.recognized = (s, e) => {
-            if (e.result.reason == sdk.ResultReason.RecognizedSpeech) {
+            if (e.result.reason === sdk.ResultReason.RecognizedSpeech) {
                 console.log(`RECOGNIZED: Text=${e.result.text}`);
                 let logInfo = `${e.result.text}`;
                 this.setState({
                     logInfo: logInfo
                  });
             }
-            else if (e.result.reason == sdk.ResultReason.NoMatch) {
+            else if (e.result.reason === sdk.ResultReason.NoMatch) {
                 console.log("NOMATCH: Speech could not be recognized.");
                let logInfo = 'Recognition Stopped.Please Tap microphone to Start Recognition';
                 this.setState({
@@ -61,7 +61,7 @@ export default class App extends Component {
         this.recognizer.canceled = (s, e) => {
             console.log(`CANCELED: Reason=${e.reason}`);
         
-            if (e.reason == sdk.CancellationReason.Error) {
+            if (e.reason === sdk.CancellationReason.Error) {
                 console.log(`"CANCELED: ErrorCode=${e.errorCode}`);
                 console.log(`"CANCELED: ErrorDetails=${e.errorDetails}`);
                 console.log("CANCELED: Did you set the speech resource key and region values?");
