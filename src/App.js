@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Container } from 'reactstrap';
-import { ResultReason } from 'microsoft-cognitiveservices-speech-sdk';
 import { speech_Token } from './speechToken';
 import './custom.css'
 
